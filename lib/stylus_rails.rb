@@ -1,0 +1,1 @@
+require 'stylus_rails/parser'
