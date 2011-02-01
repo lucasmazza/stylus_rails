@@ -10,11 +10,10 @@ Gem::Specification.new do |s|
   s.email       = ["luc4smazza@gmail.com"]
   s.homepage    = "http://rubygems.org/gems/stylus_rails"
   s.summary     = %q{Stylus stylesheets for Rails apps}
-  s.description = %q{Rails engine to parse .style files between requests}
+  s.description = %q{Rails engine to parse .styl files between requests}
 
   s.add_dependency "activesupport", "~> 3.0"
   s.add_development_dependency "rspec", "~> 2.4"
-  s.add_development_dependency "fakefs"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")

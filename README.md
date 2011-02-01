@@ -1,6 +1,6 @@
 # Stylus for Rails apps
 
-A tiny `Railtie` to parse your style files located at `public/stylesheets/stylus/*.stylus` between HTTP Requests during Rails development.
+A tiny `Railtie` to parse your style files located at `public/stylesheets/stylus/*.styl` between HTTP Requests during Rails development.
 
 
 ## Installation
@@ -9,11 +9,11 @@ Just add `gem 'stylus_rails'` To your `Gemfile`.
 
 ## Partials
 
-`stylus_rails` will skip all files starting with `_`, so you can use this naming convention with your partial styles.
+`stylus_rails` will skip all files starting with `_`, so you can use this naming convention on your partial styles.
 
 ## Folders
 
-By default, `stylus_rails` will compile all files existing at `public/stylesheets/stylus` to the `public/stylesheets` folder. For instance, `public/stylesheets/stylus/application.stylus` would generate `public/stylesheets/application.css`.
+By default, `stylus_rails` will compile all files existing at `public/stylesheets/stylus` to the `public/stylesheets` folder. For instance, `public/stylesheets/stylus/application.styl` would generate `public/stylesheets/application.css`.
 
 ## License
 
