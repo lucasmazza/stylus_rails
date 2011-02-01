@@ -1,14 +1,7 @@
-border-radius()
-  -webkit-border-radius arguments
-  -moz-border-radius arguments
-  border-radius arguments
+@import '_border_radius'
 
-body a
-  font 12px/1.4 "Lucida Grande", Arial, sans-serif
-  background black
-  color #ccc
+body
+  font 12px Helvetica, Arial, sans-serif
 
-form input
-  padding 5px
-  border 1px solid
+a.button
   border-radius 5px
