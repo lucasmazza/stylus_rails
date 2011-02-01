@@ -13,9 +13,9 @@ module Stylus
   mattr_accessor :extension
   @@extension = "styl"
 
-  def self.parse
+  def self.compile
     paths = Dir[File.join(folder, "**", "*.#{extension}")]
-    Stylus::Parser.new(paths).call
+    Stylus::Runner.new(paths).call
   end
 
   protected

@@ -1,5 +1,5 @@
 module Stylus
-  class Parser
+  class Runner
     attr_reader :paths
 
     def initialize(*paths)

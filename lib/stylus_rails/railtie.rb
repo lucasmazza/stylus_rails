@@ -8,7 +8,7 @@ module Stylus
     initializer "stylus.reloader" do
       Stylus.root = File.join(Rails.public_path,"stylesheets")
       config.to_prepare do
-        Stylus.parse
+        Stylus.compile
       end
     end
 
