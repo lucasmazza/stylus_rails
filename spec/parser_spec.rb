@@ -19,7 +19,7 @@ describe Stylus::Parser do
     end
   end
 
-  describe "#parse" do
+  describe "#call" do
     subject { Stylus::Parser.new(fixture("stylus/simple.stylus")) }
 
     it "calls the stylus cli" do
