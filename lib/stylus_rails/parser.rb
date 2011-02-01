@@ -8,7 +8,7 @@ module Stylus
 
     def call
       paths.each do |file|
-        `stylus #{file} -o #{css_folder(file)}`
+        system("stylus #{file} -o #{css_folder(file)}")
       end
     end
 
