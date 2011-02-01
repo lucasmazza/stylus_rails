@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Lucas Mazza"]
   s.email       = ["luc4smazza@gmail.com"]
   s.homepage    = "http://rubygems.org/gems/stylus_rails"
-  s.summary     = %q{Stylus stylesheets Rails apps}
+  s.summary     = %q{Stylus stylesheets for Rails apps}
   s.description = %q{Rails engine to parse .style files between requests}
 
   s.add_development_dependency "rspec", "~> 2.4"
