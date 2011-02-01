@@ -14,7 +14,13 @@ module Stylus
   @@extension = "styl"
 
   def self.parse
-    paths = Dir[File.join(root, directory, "**", "*.#{extension}")]
+    paths = Dir[File.join(folder, "**", "*.#{extension}")]
     Stylus::Parser.new(paths).call
+  end
+
+  protected
+
+  def self.folder
+    File.join(root, directory)
   end
 end
