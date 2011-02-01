@@ -8,20 +8,17 @@ module Stylus
 
     def call
       paths.each do |file|
-        `stylus < #{file} > #{css_path(file)}`
+        folder = File.dirname(file)
+        filename = File.basename(file)
+        css_file = File.basename(file, Stylus.extension) + "css"
+        `cd #{folder} && stylus < #{filename} > ../#{css_file}`
       end
     end
 
     private
 
-    def css_path(stylus_path)
-      filename = File.basename(stylus_path, ".stylus")
-      directory = File.dirname(stylus_path)
-      File.join(File.dirname(directory), filename + ".css")
-    end
-
     def should_parse?(path)
-      File.extname(path) == ".stylus" && File.file?(path) && File.basename(path) !~ /^_/
+      File.extname(path) == ".#{Stylus.extension}" && File.file?(path) && File.basename(path) !~ /^_/
     end
   end
 end

@@ -10,8 +10,11 @@ module Stylus
   mattr_accessor :root
   @@root = File.dirname(__FILE__)
 
+  mattr_accessor :extension
+  @@extension = "styl"
+
   def self.parse
-    paths = Dir[File.join(root, directory, "**", "*.stylus")]
+    paths = Dir[File.join(root, directory, "**", "*.#{extension}")]
     Stylus::Parser.new(paths).call
   end
 end
