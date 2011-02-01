@@ -1,13 +1,12 @@
 module Stylus
-  module Rails
-    class Railtie < ::Rails::Railtie
+  class Railtie < ::Rails::Railtie
 
-      initializer "stylus.reloader" do
-        ActionDispatch::Reloader.to_prepare do
-          paths = Dir[File.join(Rails.public_path, "stylesheets/stylus", "**", "*.stylus")]
-          Stylus::Parser.new(paths).call
-        end
+    initializer "stylus.reloader" do
+      Stylus.root = Rails.public_path
+      ActionDispatch::Reloader.to_prepare do
+        Stylus.parse
       end
     end
+
   end
 end

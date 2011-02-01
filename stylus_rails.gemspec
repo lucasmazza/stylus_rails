@@ -4,7 +4,7 @@ require "stylus_rails/version"
 
 Gem::Specification.new do |s|
   s.name        = "stylus_rails"
-  s.version     = Stylus::Rails::VERSION
+  s.version     = Stylus::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Lucas Mazza"]
   s.email       = ["luc4smazza@gmail.com"]
@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
   s.summary     = %q{Stylus stylesheets for Rails apps}
   s.description = %q{Rails engine to parse .style files between requests}
 
+  s.add_dependency "activesupport", "~> 3.0"
   s.add_development_dependency "rspec", "~> 2.4"
   s.add_development_dependency "fakefs"
 
