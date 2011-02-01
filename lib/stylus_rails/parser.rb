@@ -3,7 +3,7 @@ module Stylus
     attr_reader :paths
 
     def initialize(*paths)
-      @paths = paths.flatten.select { |a| File.extname(a) == ".style" }
+      @paths = paths.flatten.select { |a| File.extname(a) == ".style" && File.file?(a) }
     end
 
   end
