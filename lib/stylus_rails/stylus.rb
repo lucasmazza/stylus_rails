@@ -4,9 +4,9 @@ module Stylus
 
   # Directory to look for .stylus files
   mattr_accessor :directory
-  @@directory = "stylesheets/stylus"
+  @@directory = "stylus"
 
-  # Root path for the stylus directory lookup - mostly `Rails.public_path`
+  # Root path for the stylus directory lookup.
   mattr_accessor :root
   @@root = File.dirname(__FILE__)
 
