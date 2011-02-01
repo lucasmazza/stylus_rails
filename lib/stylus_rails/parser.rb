@@ -15,13 +15,13 @@ module Stylus
     private
 
     def css_path(stylus_path)
-      filename = File.basename(stylus_path, ".style")
+      filename = File.basename(stylus_path, ".stylus")
       directory = File.dirname(stylus_path)
       File.join(File.dirname(directory), filename + ".css")
     end
 
     def should_parse?(path)
-      File.extname(path) == ".style" && File.file?(path) && File.basename(path) !~ /^_/
+      File.extname(path) == ".stylus" && File.file?(path) && File.basename(path) !~ /^_/
     end
   end
 end
