@@ -23,8 +23,9 @@ describe Stylus::Parser do
     subject { Stylus::Parser.new(fixture("stylus/simple.styl")) }
 
     it "calls the stylus cli" do
-      folder = File.dirname(fixture("stylus/simple.styl").first)
-      subject.should_receive(:`).with("cd #{folder} && stylus < simple.styl > ../simple.css")
+      stylus_file = fixture("stylus/simple.styl").first
+      target_folder = File.dirname(fixture("simple.css").first)
+      subject.should_receive(:`).with("stylus #{stylus_file} -o #{target_folder}")
       subject.call
     end
 
