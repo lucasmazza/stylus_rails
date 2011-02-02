@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.email       = ["luc4smazza@gmail.com"]
   s.homepage    = "http://rubygems.org/gems/stylus_rails"
   s.summary     = %q{Stylus stylesheets for Rails apps}
-  s.description = %q{Rails engine to compile .styl files between requests}
+  s.description = %q{Rails plugin to compile .styl files between requests}
 
   s.add_dependency "activesupport", "~> 3.0"
   s.add_development_dependency "rspec", "~> 2.4"
