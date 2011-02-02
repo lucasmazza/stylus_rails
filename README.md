@@ -15,6 +15,9 @@ Just add `gem 'stylus_rails'` To your `Gemfile`.
 
 By default, `stylus_rails` will compile all files existing at `public/stylesheets/stylus` to the `public/stylesheets` folder. For instance, `public/stylesheets/stylus/application.styl` would generate `public/stylesheets/application.css`.
 
+## Changelog
+[here.](https://github.com/lucasmazza/stylus_rails/blob/master/CHANGELOG.md)
+
 ## License
 
 (The MIT License)
