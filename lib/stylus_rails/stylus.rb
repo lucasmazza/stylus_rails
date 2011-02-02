@@ -17,10 +17,19 @@ module Stylus
     paths = Dir[File.join(folder, "**", "*.#{extension}")]
     Stylus::Runner.new(paths).call
   end
+  def self.message
+    <<-warn
+
+Warning: 'stylus' executable was not found on your system.
+         Check stylus docs about installation at https://github.com/LearnBoost/stylus
+         and be sure to have node.js and npm properly installed.
+
+    warn
+  end
 
   protected
-
   def self.folder
     File.join(root, directory)
   end
+
 end
