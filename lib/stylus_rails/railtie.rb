@@ -11,6 +11,5 @@ module Stylus
         Stylus.compile
       end
     end
-
   end
 end
