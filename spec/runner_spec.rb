@@ -21,13 +21,29 @@ describe Stylus::Runner do
 
   describe "#call" do
     subject { Stylus::Runner.new(fixture("stylus/simple.styl")) }
+    let(:stylus_file) { fixture("stylus/simple.styl").first }
+    let(:target_folder) { File.dirname(fixture("simple.css").first) }
+
+    before do
+      Stylus.compress = false
+    end
 
     it "calls the stylus cli" do
-      stylus_file = fixture("stylus/simple.styl").first
-      target_folder = File.dirname(fixture("simple.css").first)
       subject.should_receive(:system).with("stylus #{stylus_file} -o #{target_folder}")
       subject.call
     end
 
+    it "runs files on the same folder on a single command" do
+      paths = fixtures("stylus/simple.styl", "stylus/foo.styl")
+      subject = Stylus::Runner.new(paths)
+      subject.should_receive(:system).with("stylus #{paths.join(" ")} -o #{target_folder}")
+      subject.call
+    end
+
+    it "uses the compress flag when configured to" do
+      Stylus.compress = true
+      subject.should_receive(:system).with("stylus #{stylus_file} -o #{target_folder} -C")
+      subject.call
+    end
   end
 end
