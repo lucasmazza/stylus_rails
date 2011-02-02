@@ -8,7 +8,9 @@ module Stylus
 
     def call
       paths.each do |file|
-        system("stylus #{file} -o #{css_folder(file)}#{' -C' if Stylus.compress?}")
+        folder = css_folder(file)
+        FileUtils.mkdir_p(folder) unless File.directory?(folder)
+        system("stylus #{file} -o #{folder}#{' -C' if Stylus.compress?}")
       end
     end
 
