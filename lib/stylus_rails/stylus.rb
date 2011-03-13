@@ -8,8 +8,8 @@ module Stylus
 
   # Root path for the stylus directory lookup.
   mattr_accessor :root
-  @@root = File.dirname(__FILE__)
-  
+  @@root = Dir.pwd
+
   # Root path for the output
   mattr_accessor :compile_directory
   @@compile_directory = nil
