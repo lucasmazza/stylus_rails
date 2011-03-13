@@ -1,5 +1,10 @@
 ## Changelog
 
+### 0.0.3 (2011-03-13)
+[Compare view](http://github.com/lucasmazza/stylus_rails/compare/v0.0.2...v0.0.3)
+
+* Added 'compile_directory' option, so you can output the generated .css files on any other folder. (by [sebastiandeutsch](https://github.com/sebastiandeutsch))
+
 ### 0.0.2 (2011-02-02)
 [Compare view](http://github.com/lucasmazza/stylus_rails/compare/v0.0.1...v0.0.2)
 
