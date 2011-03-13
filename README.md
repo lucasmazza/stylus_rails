@@ -13,7 +13,11 @@ Just add `gem 'stylus_rails'` To your `Gemfile`.
 
 ## Folders
 
-By default, `stylus_rails` will compile all files existing at `public/stylesheets/stylus` to the `public/stylesheets` folder. For instance, `public/stylesheets/stylus/application.styl` would generate `public/stylesheets/application.css`.
+By default, `stylus_rails` will compile all files existing at `public/stylesheets/stylus` to the `public/stylesheets` folder. For instance, `public/stylesheets/stylus/application.styl` would generate `public/stylesheets/application.css`. You can add some configuration by creating an initializer in `config/initializers`
+
+    Stylus.root = File.join(Rails.root, 'app')
+    Stylus.directory = 'stylus'
+    Stylus.compile_directory = File.join(Rails.root, 'public', 'stylesheets')
 
 ## Changelog
 [here.](https://github.com/lucasmazza/stylus_rails/blob/master/CHANGELOG.md)
