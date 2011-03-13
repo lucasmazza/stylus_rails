@@ -17,7 +17,13 @@ module Stylus
 
     private
     def css_folder(path)
-      File.dirname(File.dirname(path))
+      if Stylus.compile_directory.nil?
+        dirname = File.dirname(File.dirname(path))
+      else
+        dirname = File.dirname(path)
+        dirname.gsub!(File.join(Stylus.root, Stylus.directory), Stylus.compile_directory)
+      end
+      dirname
     end
 
     def group_paths
