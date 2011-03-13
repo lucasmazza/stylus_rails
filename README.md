@@ -1,15 +1,10 @@
 # Stylus for Rails apps
 
-A Rails helper to compile your [Stylus](https://github.com/LearnBoost/stylus) files located at `public/stylesheets/stylus/*.styl` between HTTP Requests during Rails development.
-
+A Rails helper to compile your [Stylus](https://github.com/LearnBoost/stylus) files in your Rails apps.
 
 ## Installation
 
-Just add `gem 'stylus_rails'` To your `Gemfile`.
-
-## Partials
-
-`stylus_rails` will skip all files starting with `_`, so you can use this naming convention on your partial files.
+Just add `gem 'stylus_rails'` To your `Gemfile`. Rails will load the Stylus Railtie on your app on the development environment.
 
 ## Folders
 
@@ -18,6 +13,26 @@ By default, `stylus_rails` will compile all files existing at `public/stylesheet
     Stylus.root = File.join(Rails.root, 'app')
     Stylus.directory = 'stylus'
     Stylus.compile_directory = File.join(Rails.root, 'public', 'stylesheets')
+
+## Partials
+
+`stylus_rails` will skip all files starting with `_`, so you can use this naming convention on your partial files and import them on other files.
+
+So, let's say that you have the following `_vendor.styl`:
+
+    border-radius()
+      -webkit-border-radius arguments
+      -moz-border-radius arguments
+      border-radius arguments
+
+And a `application.styl`
+
+    @import '_mixins'
+    .button
+      border-radius 5px
+
+Stylus will compile your `application.styl` into a `application.css` and your `_vendor.styl` will be ignored.
+
 
 ## Changelog
 [here.](https://github.com/lucasmazza/stylus_rails/blob/master/CHANGELOG.md)
