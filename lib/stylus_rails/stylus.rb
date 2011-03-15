@@ -36,7 +36,6 @@ module Stylus
       WARN
     end
 
-    protected
     def folder
       File.join(root, directory)
     end
