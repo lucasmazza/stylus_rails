@@ -17,13 +17,13 @@ describe Stylus::Runner do
       parser = Stylus::Runner.new(fixtures("stylus/simple.styl", "stylus/_border_radius.styl"))
       parser.paths.should == fixture("stylus/simple.styl")
     end
-    
+
     it "process nested files correctly" do
       parser = Stylus::Runner.new(fixtures("stylus/nested/bar.styl"))
       parser.paths.should == fixture("stylus/nested/bar.styl")
     end
   end
-  
+
   describe "#call" do
     subject { Stylus::Runner.new(fixture("stylus/simple.styl")) }
     let(:stylus_file) { fixture("stylus/simple.styl").first }
@@ -47,11 +47,11 @@ describe Stylus::Runner do
 
     it "uses the compress flag when configured to" do
       Stylus.compress = true
-      subject.should_receive(:system).with("stylus #{stylus_file} -o #{target_folder} -C")
+      subject.should_receive(:system).with("stylus #{stylus_file} -o #{target_folder} -c")
       subject.call
     end
   end
-  
+
   describe "#call with different compile_dir" do
     subject { Stylus::Runner.new(fixture("stylus/simple.styl")) }
     let(:stylus_file) { fixture("stylus/simple.styl").first }
@@ -78,7 +78,7 @@ describe Stylus::Runner do
 
     it "uses the compress flag when configured to" do
       Stylus.compress = true
-      subject.should_receive(:system).with("stylus #{stylus_file} -o #{target_folder} -C")
+      subject.should_receive(:system).with("stylus #{stylus_file} -o #{target_folder} -c")
       subject.call
     end
   end

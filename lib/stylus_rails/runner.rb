@@ -11,7 +11,7 @@ module Stylus
 
       directories.each_pair do |directory, files|
         FileUtils.mkdir_p(directory) unless File.directory?(directory)
-        system("stylus #{files.join(" ")} -o #{directory}#{' -C' if Stylus.compress?}")
+        system("stylus #{files.join(" ")} -o #{directory}#{' -c' if Stylus.compress?}")
       end
     end
 
