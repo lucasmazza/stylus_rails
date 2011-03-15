@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.summary     = %q{Stylus stylesheets for Rails apps}
   s.description = %q{Rails plugin to compile .styl files between requests}
 
-  s.add_development_dependency "rspec", "~> 2.4"
+  s.add_development_dependency "rspec", "~> 2.0"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
