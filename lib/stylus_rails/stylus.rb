@@ -1,5 +1,3 @@
-require 'active_support/core_ext/module/attribute_accessors'
-
 module Stylus
 
   # Directory to look for .stylus files
