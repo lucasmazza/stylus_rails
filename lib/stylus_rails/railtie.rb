@@ -11,7 +11,7 @@ module Stylus
         if `which stylus` && $?.success?
           Stylus.compile
         else
-          Rails.logger.warn(Stylus.message)
+          Rails.logger.warn(Stylus.warning)
         end
       end
     end
