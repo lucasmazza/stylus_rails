@@ -16,20 +16,19 @@ module Stylus
     end
 
     private
-    def css_folder(path)
+    def output_folder_for(path)
       if Stylus.compile_directory.nil?
-        dirname = File.dirname(File.dirname(path))
+        File.dirname(File.dirname(path))
       else
         dirname = File.dirname(path)
-        dirname.gsub!(File.join(Stylus.root, Stylus.directory), Stylus.compile_directory)
+        dirname.gsub(File.join(Stylus.root, Stylus.directory), Stylus.compile_directory)
       end
-      dirname
     end
 
     def group_paths
-      directories = Hash.new { |h, k| h[k] = [] }
+      directories = Hash.new { |hash, key| hash[key] = [] }
       paths.each do |path|
-        directories[css_folder(path)] << path
+        directories[output_folder_for(path)] << path
       end
       directories
     end
