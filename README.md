@@ -33,6 +33,30 @@ And a `application.styl`
 
 Stylus will compile your `application.styl` into a `application.css` and your `_vendor.styl` will be ignored.
 
+## Sinatra
+
+We all love [Sinatra](http://www.sinatrarb.com/), so we have a extension to add `stylus` to your Sinatra applications.
+When using classic applications, just requiring `stylus_rails` will load the extension inside the Sinatra stack. When goin' modular, you will need to register it yourself.
+
+    require 'sinatra'
+    require 'stylus_rails'
+
+    class MyApp < Sinatra::Base
+      register Stylus::Sinatra
+
+      get '/' do
+        'oh hai'
+      end
+    end
+
+You can also customize the `root` and `compile_directory` options using the Sinatra settings:
+
+    # storing your .styl files in ./styl ...
+    set :stylus_root, File.dirname(__FILE__)
+    # and compiling to ./public/stylesheets
+    set :stylus_directory, File.join(setting.public, 'stylesheets')
+
+
 ## Rake task
 
 `stylus_rails` bundles a rake task `stylus:compile` to recompile your `.styl` files. Just add the following to your Rakefile:
