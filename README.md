@@ -33,6 +33,14 @@ And a `application.styl`
 
 Stylus will compile your `application.styl` into a `application.css` and your `_vendor.styl` will be ignored.
 
+## Rake task
+
+`stylus_rails` bundles a rake task `stylus:compile` to recompile your `.styl` files. Just add the following to your Rakefile:
+
+    require 'rubygems'
+    load 'stylus_rails/tasks/compile.rake'
+
+The task is included automatically the Railtile on Rails apps.
 
 ## Changelog
 [here.](https://github.com/lucasmazza/stylus_rails/blob/master/CHANGELOG.md)

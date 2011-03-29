@@ -2,7 +2,7 @@ module Stylus
   class Railtie < ::Rails::Railtie
 
     rake_tasks do
-      load "stylus_rails/tasks/tasks.rake"
+      load "stylus_rails/tasks/compile.rake"
     end
 
     initializer "stylus.reloader" do
