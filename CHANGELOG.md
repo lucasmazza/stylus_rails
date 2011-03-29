@@ -1,5 +1,12 @@
 ## Changelog
 
+### 0.1.0 (2011-03-28)
+[Compare view](http://github.com/lucasmazza/stylus_rails/compare/v0.0.3...v0.1.0)
+
+* Sinatra plugin added. Check the docs for usage and configuration;
+* The rake task can be used standalone using `load 'stylus_rails/tasks/compile.rake'`;
+* Compress flag changed from `-C` to `-c` ([see it here](https://github.com/LearnBoost/stylus/commit/910246859718e1817c9a76683f9a892e4cad4965)). Be sure to have stylus 0.9.0 or higher installed.
+
 ### 0.0.3 (2011-03-13)
 [Compare view](http://github.com/lucasmazza/stylus_rails/compare/v0.0.2...v0.0.3)
 

@@ -1,3 +1,3 @@
 module Stylus
-  VERSION = "0.0.4.beta"
+  VERSION = "0.1.0"
 end
