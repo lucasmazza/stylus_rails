@@ -1,5 +1,5 @@
 module Stylus
-
+  extend CoreExt
   # Directory to look for .stylus files
   mattr_accessor :directory
   @@directory = "stylus"

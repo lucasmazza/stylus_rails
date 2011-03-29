@@ -1,5 +1,10 @@
 ## Changelog
 
+### 0.1.1 (2011-03-29)
+[Compare view](http://github.com/lucasmazza/stylus_rails/compare/v0.1.0...v0.1.1)
+
+* Isolating the `mattr_accessor` core ext to a module, avoiding conflicts with AS code.
+
 ### 0.1.0 (2011-03-28)
 [Compare view](http://github.com/lucasmazza/stylus_rails/compare/v0.0.3...v0.1.0)
 
