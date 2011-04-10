@@ -1,5 +1,10 @@
 ## Changelog
 
+### 0.1.2 (2011-04-10)
+[Compare view](http://github.com/lucasmazza/stylus_rails/compare/v0.1.1...v0.1.2)
+
+* Bug fixes on `Stylus::Railtie`.
+
 ### 0.1.1 (2011-03-29)
 [Compare view](http://github.com/lucasmazza/stylus_rails/compare/v0.1.0...v0.1.1)
 
