@@ -11,7 +11,11 @@ module Stylus
 
       directories.each_pair do |directory, files|
         FileUtils.mkdir_p(directory) unless File.directory?(directory)
-        system("stylus #{files.join(" ")} -o #{directory}#{' -c' if Stylus.compress?}")
+        output = `stylus #{files.join(" ")} -o #{directory}#{' -c' if Stylus.compress?} 2>&1`
+        unless $?.success?
+          raise CompilationError, "Stylus compilation error #{output}"
+        end
+        puts output
       end
     end
 

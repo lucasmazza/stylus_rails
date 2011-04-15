@@ -1,5 +1,10 @@
 module Stylus
   extend CoreExt
+  
+  # Error messages
+  Error                    = Class.new(StandardError)
+  CompilationError         = Class.new(Error)
+  
   # Directory to look for .stylus files
   mattr_accessor :directory
   @@directory = "stylus"
