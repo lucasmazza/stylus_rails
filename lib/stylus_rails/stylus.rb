@@ -22,6 +22,9 @@ module Stylus
 
   mattr_accessor :compress
   @@compress = true
+  
+  mattr_accessor :silent
+  @@silent = false
 
   class << self
     alias_method :compress?, :compress
