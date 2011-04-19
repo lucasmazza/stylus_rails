@@ -1,10 +1,10 @@
 module Stylus
   extend CoreExt
-  
+
   # Error messages
   Error                    = Class.new(StandardError)
   CompilationError         = Class.new(Error)
-  
+
   # Directory to look for .stylus files
   mattr_accessor :directory
   @@directory = "stylus"
@@ -22,12 +22,13 @@ module Stylus
 
   mattr_accessor :compress
   @@compress = true
-  
+
   mattr_accessor :silent
   @@silent = false
 
   class << self
     alias_method :compress?, :compress
+    alias_method :silent?, :silent
 
     def compile
       paths = Dir[File.join(folder, "**", "*.#{extension}")]
