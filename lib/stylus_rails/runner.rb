@@ -13,17 +13,20 @@ module Stylus
         FileUtils.mkdir_p(directory) unless File.directory?(directory)
         output = `stylus #{files.join(" ")} -o #{directory}#{' -c' if Stylus.compress?} 2>&1`
 
-        unless output.nil?   # output will be nil in case of running the specs
-          unless $?.success? # check if everthing went fine
-            raise CompilationError, "Stylus compilation error #{output}" unless Stylus.silent?
-          end
-
-          puts output
+        if failed?
+          raise CompilationError, "Stylus compilation error #{output}" unless Stylus.silent?
         end
+
+        puts output
       end
     end
 
     private
+
+    def failed?
+      !$?.success?
+    end
+
     def output_folder(path)
       dirname = File.dirname(path)
       if Stylus.compile_directory.nil?
