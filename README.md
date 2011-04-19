@@ -68,6 +68,13 @@ And a `application.styl`
 
 Stylus will compile your `application.styl` into a `application.css` and your `_vendor.styl` will be ignored.
 
+## Error Handling
+
+If the stylus binary exits with error code 1 stylus_rails will throw an error exception. In case you don't want
+this the behaviour can be switched to silent by setting the following variable to false:
+
+    Stylus.silent = true
+
 ## Changelog
 [here.](https://github.com/lucasmazza/stylus_rails/blob/master/CHANGELOG.md)
 
