@@ -5,7 +5,7 @@ module Stylus
   Error                    = Class.new(StandardError)
   CompilationError         = Class.new(Error)
 
-  # Directory to look for .stylus files
+  # Directory to look for .stylus files.
   mattr_accessor :directory
   @@directory = "stylus"
 
@@ -13,19 +13,22 @@ module Stylus
   mattr_accessor :root
   @@root = Dir.pwd
 
-  # Root path for the output
+  # Root path for the generated output.
   mattr_accessor :compile_directory
   @@compile_directory = nil
 
   mattr_accessor :extension
   @@extension = "styl"
 
+  # Checks if the -c flag should be passed to Stylus to render single line CSS statements.
   mattr_accessor :compress
   @@compress = true
 
+  # Checks if an CompilationError should be raised if the compilation fails.
   mattr_accessor :silent
   @@silent = false
 
+  # Logger instance to write the stylus output.
   mattr_accessor :logger
 
   class << self
