@@ -26,9 +26,15 @@ module Stylus
   mattr_accessor :silent
   @@silent = false
 
+  mattr_accessor :logger
+
   class << self
     alias_method :compress?, :compress
     alias_method :silent?, :silent
+
+    def logger
+      @@logger ||= Logger.new($stdout)
+    end
 
     def compile
       paths = Dir[File.join(folder, "**", "*.#{extension}")]

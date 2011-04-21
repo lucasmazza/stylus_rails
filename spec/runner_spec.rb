@@ -51,10 +51,36 @@ describe Stylus::Runner do
       subject.call
     end
 
+    it "writes the output to the associated logger" do
+      subject.stub(:`) { "some output" }
+      Stylus.logger.should_receive(:info).with("some output")
+      subject.call
+    end
+
     context "#call when stylus(1) fails" do
-       it "raises an exception" do
-         subject.stub!(:failed?).and_return(true)
-        expect { subject.call }.to raise_error Stylus::CompilationError
+      before do
+        subject.stub!(:failed?).and_return(true)
+      end
+
+      context "when Stylus.silent is false" do
+        before { Stylus.silent = false }
+        it "raises an exception" do
+         expect { subject.call }.to raise_error Stylus::CompilationError
+        end
+      end
+
+       context "when Stylus.silent is true" do
+         before { Stylus.silent = true }
+
+         it "doesn't raise an exception" do
+           expect { subject.call }.to_not raise_error Stylus::CompilationError
+         end
+
+         it "writes the error output to the logger" do
+           subject.stub(:`) { "FAIL" }
+           Stylus.logger.should_receive(:error).with("FAIL")
+           subject.call
+         end
        end
     end
   end

@@ -1,3 +1,4 @@
+require 'logger'
 require 'stylus_rails/core_ext'
 require 'stylus_rails/stylus'
 require 'stylus_rails/runner'

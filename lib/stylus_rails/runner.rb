@@ -14,14 +14,22 @@ module Stylus
         output = `stylus #{files.join(" ")} -o #{directory}#{' -c' if Stylus.compress?} 2>&1`
 
         if failed?
-          raise CompilationError, "Stylus compilation error #{output}" unless Stylus.silent?
+          handle_failure(output)
+        else
+          Stylus.logger.info(output)
         end
-
-        puts output
       end
     end
 
     private
+
+    def handle_failure(output)
+      if Stylus.silent?
+        Stylus.logger.error(output)
+      else
+        raise CompilationError, "Stylus compilation error #{output}"
+      end
+    end
 
     def failed?
       !$?.success?
