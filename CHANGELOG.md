@@ -3,8 +3,8 @@
 ### 0.1.3 (2011-04-20)
 [Compare view](http://github.com/lucasmazza/stylus_rails/compare/v0.1.2...v0.1.3)
 
-* `Stylus` will raise an exception if the compilation fails. You can turn this off with `Stylus.silent = true`.
-* Added `Stylus.logger` to handle the output from stylus. On Rails applications this will be the standard Rails logger.
+* `Stylus` will raise an exception if the compilation fails. You can turn this off with `Stylus.silent = true`. (by [sebastiandeutsch](https://github.com/sebastiandeutsch))
+* Added `Stylus.logger` to handle the output from stylus. On Rails applications this will be the current Rails logger.
 
 ### 0.1.2 (2011-04-10)
 [Compare view](http://github.com/lucasmazza/stylus_rails/compare/v0.1.1...v0.1.2)
