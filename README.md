@@ -2,6 +2,9 @@
 
 A gem to compile your [Stylus](https://github.com/LearnBoost/stylus) stylesheets in your ruby apps.
 
+### Rails 3.1? Sprockets and stuff?
+Check the new [stylus](https://github.com/lucasmazza/ruby-stylus) gem.
+
 ## Installation
 
 Just add `gem 'stylus_rails'` To your `Gemfile`. Rails will load the Stylus Railtie on your app on the development environment, and classic Sinatra applications will have an extension registered on your current application. On any other cenario you can run `Stylus.compile` inside your ruby code.
